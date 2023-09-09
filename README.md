@@ -7,27 +7,33 @@
 ## Email: juanestebangarciarodriguez@gmail.com
 ## Usuario GitHub: juesga1987
 ## Información al interior del repositorio:
-1. Carpeta entregables: Archivos tipo notebook: ETL, Analisis de sentimientos, funciones, modelo de recomendación y archivos adicionales que se obtuvieron para el trabajo y fueron usados como base para los archivos finales de considerados en la API.
+1. Carpeta entregables: 
 
-2. Repositorio (Arhivos para deployment API).
+2. 
 
 # Introducción
 
-### En este proyecto, asumí el rol de un MLOps Engineer en Steam, una plataforma multinacional de videojuegos, para este caso en particular analizamos la información provista por la empresa para Australia en las siguientes bases de datos:
+### En este proyecto, asumí el rol consultor especialista en data analitycs contratado por el gobierno de la ciudad de Buenos Aires, cuyo objetivo es analizar a profundidad los datos al respecto de las fatalidades u homicdios en accidentes de transito con la información historica que comprende los años del 2016 a 2021. Como fin ultimo se busca que dicho analisis permita a las autoridades de transporte tomar medidas para disminuir la cantidad de fatalidades en via publica y oriente en terminos de las estrategias que sean aplicables y ayuden a cumplir las metas establecidas a este respecto.
 
-1.	Steam Games: Base datos de los juegos que contiene información relevante como desarrolladores, nombre de los títulos, precio, genero, año de lanzamiento entre otras.
-2.	Reviews: Se trata de un dataset con las recomendaciones y reviews detalladas por usuario de los juegos con los que interactuaron, en este encontramos datos como el user id, recomendación, review detallado, fecha de posteo del review, juego calificado.
-3.	Items: Nos provee con gran especificidad de los usuarios, su tiempo de juego, su id en la plataforma e id del usuario.
-   
-### El objetivo de este proyecto en términos generales es utilizar las bases de datos provistas y realizar el respectivo proceso de extracción, transformación y carga (ETL) garantizando el despliegue de una API funcional usando la librería FastApi y Render (Sistema en la nube de construcción y ejecución de apps) donde se alojarán consultas especificas realizadas a través de funciones además de los resultados del sistema de recomendación. 
-### Este es un caso donde partiendo de cero buscamos seguir el ciclo de vida de un proyecto de Machine Learning hasta el deployment final de los resultados.
+### Como material de trabajo nos proveen con un Dataset oficial que contiene información relevante sobre los homicidios en siniestros viales. 
+
+### Como esquema metodologico para el desarrollo de nuestro proyecto, contamos con las siguientes etapas:
+
+a. Realizar un ETL del dataset.
+
+b. Analisis exploratorio de datos (EDA): Nos permite como consultores entender las variables y las relaciones entre las mismas en terminos estadisticos y cualitativos. De este proceso nace el enfoque de la presentación posterior y la definición de key aspects.
+
+c. Presentación interactiva: Escogimos la herramienta Power BI para la creación de vicualizaciones potentes e intuitivas cuyo fin es exponer la problematica y soportar las estrategias y acciones sugeridas de nuestra parte. Vale la pena anotar que en el dashboard se podran observar metricas especificas solicitadas por el cliente.
+
+
 
 # Descripción del Problema
 
 ## Contexto
 
-### A pesar de que nuestra empresa Steam ha obtenido buenos resultados previamente aun careciendo de un análisis exhaustivo de la información que ha recopilado como resultado de la interacción de los usuarios con la plataforma, la empresa busca ahora tomar ventaja de las tecnologías actuales para entender mucho mejor las relaciones entre los juegos que ofrece, sus usuarios y las características de los mismos, además del desarrollo de un sistema de recomendación que permita que la interacción con la plataforma sea mucho más certera y de esta forma capturar un mayor número de clientes y lograr la fidelización de los actuales.
-### Como especialistas en datos contamos con datos de bajo de calidad que requieren de data engineering para que sean útiles y agreguen valor. 
+### A pesar de la adopción en los ultimos años de teconologias por parte del departamento de transporte de la ciudad, las fatalidades relacionadas con siniestros viales siguen siendo una de las principales causas de muerte, con este inquietante panorama el gobierno de la ciudad ha disponibilizado para nosotros la data recogido en los ultimos años, pues se ha percatado que a pesar de ciertas mejorias en los indicadores, todavia hay mucho camino por recorrer.
+
+### Nuestra labor sera de una forma concisa y precisa concluir al respecto de los datos y ademas precisar el camino a seguir, incluyendo acciones que combinen metodos tradicionales de control y seguridad en las vias con tecnologias que puedan influir de manera contundente en el numero de accidentes fatales.
 
 # Resumen del trabajo y sus etapas
 
