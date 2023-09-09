@@ -1,6 +1,6 @@
 # Siniestros-viales-CABA
 
-![Logo de Steam]([https://prod.assets.earlygamecdn.com/images/Steam.jpg?transform=article3x_webp&x=0.5&y=0.5](https://www.google.com/url?sa=i&url=http%3A%2F%2Fthefreshagency.com%2Fclientes-partners%2F&psig=AOvVaw2S0kdFFrekqTh2BlXNkIL-&ust=1694350453919000&source=images&cd=vfe&opi=89978449&ved=0CA4QjRxqFwoTCJi0qb_JnYEDFQAAAAAdAAAAABAD))
+![Logo de Steam]([https://www.google.com/url?sa=i&url=http%3A%2F%2Fthefreshagency.com%2Fclientes-partners%2F&psig=AOvVaw2S0kdFFrekqTh2BlXNkIL-&ust=1694350453919000&source=images&cd=vfe&opi=89978449&ved=0CA4QjRxqFwoTCJi0qb_JnYEDFQAAAAAdAAAAABAD])
 
 # Proyecto Siniestros Viales
 ## Juan Esteban García.
