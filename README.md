@@ -19,13 +19,11 @@
 
 ### Como esquema metodologico para el desarrollo de nuestro proyecto, contamos con las siguientes etapas:
 
-a. Realizar un ETL del dataset.
+a. Realizar un ETL del dataset: Para el proceso de depuracion se uso Python. Entre otros se inputo cuando era posible las filas sin data "SD". Los tipos de datos fueron organizados tomando gran importancia las fechas. Posteriormente se aplico un merge entre el dataset "Hechos" y "Victimas" para consolidar toda la informacion necesaria en un archivo de texto que se usara para el EDA.
 
 b. Analisis exploratorio de datos (EDA): Nos permite como consultores entender las variables y las relaciones entre las mismas en terminos estadisticos y cualitativos. De este proceso nace el enfoque de la presentación posterior y la definición de key aspects.
 
 c. Presentación interactiva: Escogimos la herramienta Power BI para la creación de vicualizaciones potentes e intuitivas cuyo fin es exponer la problematica y soportar las estrategias y acciones sugeridas de nuestra parte. Vale la pena anotar que en el dashboard se podran observar metricas especificas solicitadas por el cliente.
-
-
 
 # Descripción del Problema
 
@@ -39,7 +37,33 @@ c. Presentación interactiva: Escogimos la herramienta Power BI para la creació
 
 ## ETL
 
-### Leer los datasets proporcionados en el formato correcto realizando las eliminaciones de columnas innecesarias para optimizar el rendimiento de la API y el entrenamiento del modelo, Esta etapa es fundamental pues era necesario interactuar con datasets que contenían columnas anidadas en listas de diccionarios, emoticones e imágenes como códigos escritos de tipo alfanumericos con caracteres especiales, espacios nulos, fechas en formatos no compatibles y columnas de % de calificación con texto. 
+### Esta etapa es fundamental pues de ella depende la calidad del EDA y trabajo posterior. Nos entregaron un archivo de excel con varias hojas que contenian los datasets y los diccionarios de terminos. Procedimos a separar las hojas "Hechos" y "Victimas" con el fin de trabajar en cada una de ellas de forma separada.
+
+### Hechos:
+
+a. Encontramos que las columnas "Altura" y "Cruce" tenian bastantes celdas sin informacion, sin embargo en la data encontramos la latitud y longitud, por lo que estas dos columnas inicialmente nombradas no fueron tenidas en cuenta para el trabajo.
+b. Se separo en longitud y latitud plana la columna "XY (CABA)".
+c. Se eleimino la columna "Hora" pues era redundante ya que contabamos con la franja horaria, a esta ultima se le cambio el tipo de dato a int.
+
+### Victimas:
+
+a. Se encontraron algunos ID's repetidos, por ello se analizo la causa y se determino que esto correspondia a que hay accidentes donde se presentar multiples fatalidades por lo que en la data se observa una linea por fallecido. Dado esto concluimos que los ID's repetidos realmente no lo son.
+b. En la columna "Rol" se encontraron 11 filas sin data "SD". Dado que en proporciones el Rol Conductor es el de mayor preponderancia, se inputo esa clasificacion en las filas faltantes.
+c. La columna "Victima" tambien presentaba la misma dificultadad, para ser congruentes como a los faltantes en "Rol" se asigno conductor, en "Victima" identificamos que la proporci[on de motos es muy alta, por lo que la probabilidad apunta a que si el Rol fue asignado como conductos en el accdiente la victima fue una moto.
+d. El "Sexo" era otra columnna con faltantes, al analizarla la proporcion de hombres y mujeres es bastante desigual, siengo el sexo preponderante el masculino. A las filas faltantes se asigno este registro.
+e. Para la asignaci[on de falatantes en la columna "Edad" se saco el promedio por sexo y de acuerdo a este se asigno a las celdas de acuerdo al sexo la edad promedio resultante.
+f. Las fechas de fallecimiento faltantes se diligenciaron usando la fecha del accidente. Normalmente segun nos indican los datos los accidentes fatales causan la muerte de forma inmediata o con poca diferencia de horas frente al acaecimiento del hecho, por esto motivo cuando faltaba la fecha de fallecimiento se inputo la fecha del accidente.
+
+### Merge:
+
+a. Sabiendo que en la mayoria de los casos la culpabilidad la tiene el AUTO y analizando los tipos de victimas para los casos donde no conocemos el acusado, podemos inferir que en gran parte esos accidentes de deberon a un auto. Procederemos a inputar en la columna acusado para los 25 casos faltantes como responsable el AUTO.
+b. En las columnas latitud y longitud identificamos celdas que a pesar de no estar vacias unicamente contienen un punto, vamos a proceder a reeemplazar el mismo por un espacio vacio. No las eliminaremos pues a pesar de no tener la ubicacion exacta del accidente no quiero afectar el conteo ni distribucion de otras variables.
+c. Pensando en una matriz de correlacion posterior. Procedimos a realizar un mapeo de las columnas con variables categoricas de relevancia. Se crearon entonces columnas con dicho proceso para: Rol, Victima, Sexo, Participantes.
+
+### Para finalizar se guardo la informacion resultante en en el archivo .CSV llamado "hechosyvictimas".
+
+
+era necesario interactuar con datasets que contenían columnas anidadas en listas de diccionarios, emoticones e imágenes como códigos escritos de tipo alfanumericos con caracteres especiales, espacios nulos, fechas en formatos no compatibles y columnas de % de calificación con texto. 
 ### Posterior a lo anterior y dado el tamaño de algunos de los DataFrames resultantes decidí crear archivos fraccionados según la necesidad de cada función y el modelo, esta es una decisión fundamental, pues, aunque sacrifica algo de veracidad asegura que el deployment se ejecute sin inconvenientes. Dado que la memoria de procesamiento de Render es únicamente de 500mb, para algunas de las funciones se prefirió seleccionar una muestra de los datasets pues a pesar de haber creado archivos con la información estrictamente necesaria para cada función algunas de ellas necesitaban menor costo computacional. En mi caso dichas funciones fueron: UserData, UserForGenre y el modelo de recomendación.
 ## Análisis de sentimientos
 ### Con base en los reviews de cada uno de los usuarios que se encontraban en el DataFrame reviews se procedió a transformar caracteres especiales que afectaban el rendimiento del modelo.
