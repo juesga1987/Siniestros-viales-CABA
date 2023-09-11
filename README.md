@@ -122,7 +122,15 @@ c. Pensando en una matriz de correlacion posterior. Procedimos a realizar un map
 
 10. A pesar de que se dan outliers o datos atípicos en términos de la edad, las franjas horarias y el número de víctimas cuando se analizan a razón de la lógica no son casos que necesiten ser revisados o contrastados.
   
-## Modelo ML de recomendación
+## Dashboard y presentación de resultados
+
+### La presentación realizada a traves de la herramienta PowerBi busca exponer la problematica de los homicidios como consecuencia de siniestros viales fatales, los posibles causantes y soluciones a traves de acciones. Por ello se comienza exponiendo a traves de KPI´s la evolución semestre a semestre de de las victimas fatales y se propone un KPI que nos indique de 2016 a 2021 cual ha sido la evolución promedio geometrica de la tendencia de accidentes. 
+
+### El analisis continua con las victimas por categoría que nos proporcionan la relación mas relevante sobre el grupo de actores viales sobre el cual deben centrarse las acciones. En la ciudad de Buenos Aires son las motos y los peatones, esta información se compara con los responsables con mas incidencia en los accidentes, que serian las autos particulares y los vehiculos de carga. En terminos generales mueren los conductores en mayor medida y los peatones. El sexo preponderante para las victimas en el Masculino, investigue al respecto y esto puede explicarse pues unicamente el 28% de las licencias que se expiden a mujeres. Expondremos una grafica esclarecedora obtenida del siguiente vinculo de Infobae https://www.infobae.com/inhouse/2022/12/13/movilidad-y-genero-solo-el-28-de-las-licencias-de-conducir-emitidas-en-un-ano-corresponde-a-mujeres/:
+
+![Mujeres](https://cloudfront-us-east-1.images.arcpublishing.com/infobae/QDYH3RNV5ZGOJFFIEUROHBVWEA.jpg)
+
+
 
 
 
