@@ -7,9 +7,12 @@
 ## Email: juanestebangarciarodriguez@gmail.com
 ## Usuario GitHub: juesga1987
 ## Información al interior del repositorio:
-1. Carpeta entregables: 
 
-2. 
+1. README
+2. ETL (Notebook Jupyter)
+3. EDA (Notebook Jupyter)
+4. Achivo PowerBi con dashboard.
+5. Imagen del Dashboard.
 
 # Introducción
 
