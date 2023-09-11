@@ -62,29 +62,6 @@ c. Pensando en una matriz de correlacion posterior. Procedimos a realizar un map
 
 ### Para finalizar se guardo la informacion resultante en en el archivo .CSV llamado "hechosyvictimas".
 
-
-era necesario interactuar con datasets que contenían columnas anidadas en listas de diccionarios, emoticones e imágenes como códigos escritos de tipo alfanumericos con caracteres especiales, espacios nulos, fechas en formatos no compatibles y columnas de % de calificación con texto. 
-### Posterior a lo anterior y dado el tamaño de algunos de los DataFrames resultantes decidí crear archivos fraccionados según la necesidad de cada función y el modelo, esta es una decisión fundamental, pues, aunque sacrifica algo de veracidad asegura que el deployment se ejecute sin inconvenientes. Dado que la memoria de procesamiento de Render es únicamente de 500mb, para algunas de las funciones se prefirió seleccionar una muestra de los datasets pues a pesar de haber creado archivos con la información estrictamente necesaria para cada función algunas de ellas necesitaban menor costo computacional. En mi caso dichas funciones fueron: UserData, UserForGenre y el modelo de recomendación.
-## Análisis de sentimientos
-### Con base en los reviews de cada uno de los usuarios que se encontraban en el DataFrame reviews se procedió a transformar caracteres especiales que afectaban el rendimiento del modelo.
-### A partir de allí se usó la librería de procesamiento de lenguaje natural NLTK para la tokenización por palabras. Hecho esto se uso la librería VaderSentiment y el método SentimentIntensityAnalyzer, aquí hay una observación importante, en lugar de tomar los resultantes en términos positivos, negativos y neutrales como lo permite el método, usamos el resultado compound que rastrea matemáticamente con base en un ponderado el tipo de sentimiento del usuario, si el resultado es mayor a 0 se considera que la calificación fue positiva y menor a 0 negativa. Se hizo de esta forma pues era necesario que los sentimientos de carácter neutral o indeterminado incluyeran únicamente aquellos reviews que estaban vacíos. De esta forma nuestro resultado final se compone de numero de sentimientos positivos, negativos y neutrales solo aquellos sin reviews.
-### Posteriormente se creó una columna llamada “sentiment”.
-## Desarrollo de la API
-### Dadas las necidades de la organización, se desarrollo una API que disponibilizara los datos con base en funciones consideradas estrategicas para evaluar las conclusiones del trabajo realizado. Para ello se utilizo el framework FastApi y render como plataforma host para la construccion y deployment. Como se menciono anteriormente la capacidad de procesamiento limitada a 500mb de Ram fue todo un desafio.
-
-### Las funciones creadas fueron:
-•	userdata(User_id: str): Devuelve la cantidad de dinero gastado por el usuario, el porcentaje de recomendación en base a la columna recommend y la cantidad de items. Para permitir el deployment se uso una muestra del dataframe items.
-
-•	countreviews(start_date: str, end_date: str): Cantidad de usuarios que realizaron reviews entre las fechas dadas y el porcentaje de recomendación de estos en base a recommend.
-
-•	genre(genre: str): Puesto en el que se encuentra un género en el ranking de PlayTimeForever.
-
-•	userforgenre(genre: str): Top 5 de usuarios con más horas de juego en el género dado, con su URL y user_id. En este caso tambien se uso una muestra de items para permitir el deployment.
-
-•	developer(developer: str): Cantidad de items y el porcentaje de contenido gratuito por año según la empresa desarrolladora.
-
-•	sentiment_analysis(year: int): Lista con la cantidad de registros de reseñas de usuarios categorizados con un análisis de sentimiento según el año de lanzamiento.
-
 ## Análisis Exploratorio de los Datos Modelo de recomendacion (EDA)
 ### Se realizo un EDA de los datos del dataframe games pues de alli se extrajeron los datos  para el desarrollo de modelo de recomendación como era solicitado por la empresa, vale la pena aclarar que el archivo usado para el modelo de recomendación es simplement un dataframe con la información justamente necesario para ejecutarlo de acuerdo a a las variables identificadas como mas relevantes.
 ### Se analizaron las variables mas relevantes del dataset con base en el modelo de recomendación item a item o juego a juego. Con base en el EDA se determino que el mismo debia ser realizado con el desarrollador y el genero pues determinaban en mayor medida la selección de un juego en particular.
