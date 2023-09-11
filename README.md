@@ -37,7 +37,7 @@ c. Presentación interactiva: Escogimos la herramienta Power BI para la creació
 
 ## ETL
 
-### Esta etapa es fundamental pues de ella depende la calidad del EDA y trabajo posterior. Nos entregaron un archivo de Excel con varias hojas que contenían los data sets y los diccionarios de términos. Procedimos a separar las hojas "Hechos" y "Victimas" con el fin de trabajar en cada una de ellas de forma separada.
+### Esta etapa es fundamental pues de ella depende la calidad del EDA y trabajo posterior. Nos entregaron un archivo de Excel con varias hojas que contenían los data sets y los diccionarios de términos. Procedimos a separar las hojas "Hechos" y "Victimas" con el fin de trabajar en cada una de ellas de forma separada en python.
 
 ### Hechos:
 
