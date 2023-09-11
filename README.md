@@ -72,7 +72,7 @@ c. Pensando en una matriz de correlación posterior. Procedimos a realizar un ma
 ### Para finalizar se guardó la información resultante en el archivo .CSV llamado "hechosyvictimas".
 
 ## Análisis Exploratorio de los datos (EDA)
-### Para llevar a cabo el EDA se generó en primera instancia el reporte de la librería Pandas Profiling. Sin embargo y a pesar de tener el reporte a la mano se procedió posteriormente a analizar mediante gráficos propios la data de la siguiente forma:
+### Para llevar a cabo el EDA se uso python y se generó en primera instancia el reporte de la librería Pandas Profiling. Sin embargo y a pesar de tener el reporte a la mano se procedió posteriormente a analizar mediante gráficos propios la data de la siguiente forma:
 
 -	Estadísticas descriptivas: Media, desviación standard, percentiles, mínimo y máximo.
   
