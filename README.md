@@ -42,22 +42,31 @@ c. Presentación interactiva: Escogimos la herramienta Power BI para la creació
 ### Hechos:
 
 a. Encontramos que las columnas "Altura" y "Cruce" tenian bastantes celdas sin informacion, sin embargo en la data encontramos la latitud y longitud, por lo que estas dos columnas inicialmente nombradas no fueron tenidas en cuenta para el trabajo.
+
 b. Se separo en longitud y latitud plana la columna "XY (CABA)".
+
 c. Se eleimino la columna "Hora" pues era redundante ya que contabamos con la franja horaria, a esta ultima se le cambio el tipo de dato a int.
 
 ### Victimas:
 
 a. Se encontraron algunos ID's repetidos, por ello se analizo la causa y se determino que esto correspondia a que hay accidentes donde se presentar multiples fatalidades por lo que en la data se observa una linea por fallecido. Dado esto concluimos que los ID's repetidos realmente no lo son.
+
 b. En la columna "Rol" se encontraron 11 filas sin data "SD". Dado que en proporciones el Rol Conductor es el de mayor preponderancia, se inputo esa clasificacion en las filas faltantes.
+
 c. La columna "Victima" tambien presentaba la misma dificultadad, para ser congruentes como a los faltantes en "Rol" se asigno conductor, en "Victima" identificamos que la proporci[on de motos es muy alta, por lo que la probabilidad apunta a que si el Rol fue asignado como conductos en el accdiente la victima fue una moto.
+
 d. El "Sexo" era otra columnna con faltantes, al analizarla la proporcion de hombres y mujeres es bastante desigual, siengo el sexo preponderante el masculino. A las filas faltantes se asigno este registro.
+
 e. Para la asignaci[on de falatantes en la columna "Edad" se saco el promedio por sexo y de acuerdo a este se asigno a las celdas de acuerdo al sexo la edad promedio resultante.
+
 f. Las fechas de fallecimiento faltantes se diligenciaron usando la fecha del accidente. Normalmente segun nos indican los datos los accidentes fatales causan la muerte de forma inmediata o con poca diferencia de horas frente al acaecimiento del hecho, por esto motivo cuando faltaba la fecha de fallecimiento se inputo la fecha del accidente.
 
 ### Merge:
 
 a. Sabiendo que en la mayoria de los casos la culpabilidad la tiene el AUTO y analizando los tipos de victimas para los casos donde no conocemos el acusado, podemos inferir que en gran parte esos accidentes de deberon a un auto. Procederemos a inputar en la columna acusado para los 25 casos faltantes como responsable el AUTO.
+
 b. En las columnas latitud y longitud identificamos celdas que a pesar de no estar vacias unicamente contienen un punto, vamos a proceder a reeemplazar el mismo por un espacio vacio. No las eliminaremos pues a pesar de no tener la ubicacion exacta del accidente no quiero afectar el conteo ni distribucion de otras variables.
+
 c. Pensando en una matriz de correlacion posterior. Procedimos a realizar un mapeo de las columnas con variables categoricas de relevancia. Se crearon entonces columnas con dicho proceso para: Rol, Victima, Sexo, Participantes.
 
 ### Para finalizar se guardo la informacion resultante en en el archivo .CSV llamado "hechosyvictimas".
