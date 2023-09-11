@@ -71,19 +71,59 @@ c. Pensando en una matriz de correlacion posterior. Procedimos a realizar un map
 
 ### Para finalizar se guardo la informacion resultante en en el archivo .CSV llamado "hechosyvictimas".
 
-## Análisis Exploratorio de los Datos Modelo de recomendacion (EDA)
-### Se realizo un EDA de los datos del dataframe games pues de alli se extrajeron los datos  para el desarrollo de modelo de recomendación como era solicitado por la empresa, vale la pena aclarar que el archivo usado para el modelo de recomendación es simplement un dataframe con la información justamente necesario para ejecutarlo de acuerdo a a las variables identificadas como mas relevantes.
-### Se analizaron las variables mas relevantes del dataset con base en el modelo de recomendación item a item o juego a juego. Con base en el EDA se determino que el mismo debia ser realizado con el desarrollador y el genero pues determinaban en mayor medida la selección de un juego en particular.
-### El EDA se realizo de forma grafica mayoritariamente pues definitivamente hace los datos mas amenos y faciles de entender para el usuario final de la informacion, se usaron:
--	Barras.
--	Barras compiladas.
--	Boxplot.
--	Tortas.
+## Análisis Exploratorio de los datos (EDA)
+### Para llevar a cabo el EDA se genero en primera instancia el reporte de la libreria Pandas Profiling. Sin embargo y a pesar de tener el reporte a la mano se procedio posteriormente a analizar mediante graficos propios la data de la siguiente forma:
+
+-	Estadisticas descriptivas: Media, desviación standard, percentiles, minimo y maximo.
+  
+-	Correlación entre variables.
+  
+-	Analisis univariado, bivariado y multivariado.
+  
+-	Outliers de variables.
+
+### Los graficos mediante los cuales se realizo el analisis fueron:
+
+- Correlación entre variables.
+- Estadistica descriptiva.
+- Distribución accidentes por año y por mes.
+- Coincidencia Fecha de fallecimiento vs fecha de accidente.
+- Muertes por mes.
+- Outliers Victimas.
+- Victimas por categoría.
+- Outliers victimas por franja horaria.
+- Outliers victimas por franja horaria por categoría.
+- Victimas por año.
+- Outliers edad por tipo de sexo.
+- Victimas por sexo año.
+- Proporción de victimas por sexo.
+- Victimas por comuna por categoría.
+- Victimas por comuna por sexo.
+- Relación acusado y víctima.
+- Acusado por año / Categoría.
+
+### Las conclusiones especificas para cada grafico las puede encontrar en el notebook llamado EDA que se dejara en el repositorio. Sin embargo expondre las conclusiones generales:
+
+1. Las variables más relacionadas son las fechas del accidente y las fechas de fallecimiento, de esta correlación se puede inferir que la mayoría de los accidentes causan una muerte inmediata o en las siguientes horas o días.
+
+2. Los roles y las victimas también se relacionan esto pues el rol que asume una persona en un accidente de tránsito se puede directamente relacionar con la víctima del accidente.
+
+3. Las muertes por año y mes nos indican que hay ciertos meses del año donde se dan más accidentes fatales, estos son noviembre, diciembre y enero. El análisis de las muertes por mes corrobora esta conclusión. Otra inferencia que podemos hacer es que durante el año 2.020 se evidencian que en los meses más difíciles de la Pandemia hubo una reducción significativa de las fatalidades. A partir del 2.018 se ve que hay una tendencia clara a la disminución de accidentes fatales, lo que indica que las medidas tomadas por las autoridades han sido efectivas.
+
+5. La mayoría de las víctimas son de sexo masculino y son motociclistas. De igual forma son los autos particulares los más acusados como responsables del homicidio.
+
+6. En cuanto a la edad se evidencia que las victimas hombres tienen un rango de edad menos disperso y no es común ver víctimas de más de 80 años. Las mujeres tienen accidentes fatales a una edad más tardía y es más común que se accidenten mujeres en edades de 80 años en adelante en comparación con los hombres.
+
+7. Las franjas horarias y las victimas nos indican que la mayoría de los accidentes fatales se dan en la hora pico de la mañana, hora en que la mayoría de las personas se desplazan a sus trabajos. Por categoría se ve que las motos son los tipos de victima que se accidentan en un rango más amplio de horas.
+
+8. Las fatalidades por comuna se dan principalmente en aquellas que son altamente turísticas o concentran la mayoría de la población trabajadora. Las motos mantienen una tendencia de fatalidad en todas las comunas, sin embargo, los peatones son víctimas en aquellas turísticas o centros de trabajo.
+
+9. Las victimas con mayor incidencia son las motos y los peatones. Frente a los acusados que son los autos particulares, los carros de carga y los pasajeros.
+
+10. A pesar de que se dan outliers o datos atípicos en términos de la edad, las franjas horarias y el número de víctimas cuando se analizan a razón de la lógica no son casos que necesiten ser revisados o contrastados.
+  
 ## Modelo ML de recomendación
-### Después de preparar los datos y realizar el EDA, entrenamos el modelo de recomendación basado en la similaridad del coseno que es una medida de similitud entre dos vectores que como producto arroja la relacion entre los mismos en referencia a una variable dada, como lo mencionamos anteriormente en mi caso, se determino que un juego (item) estaba intimamente ligado al genero y el desarrollador. 
-### La librería Scikit-Learn proporciona los metodos para la creacion de la matriz o vectores (TfidVectorizer) y el metodo de coseno de similaridad (cosine_similarity). En este paso y dadas las limitaciones de procesamiento de nuestro host Render se tomo una muetra del 12% original del DataSet, que permite hacer el deploy y generar la matriz de resultados. Esta es la minima muestra que asegura un resultado de recomendación.
-### Adicionalmente fue necesario eliminar algunos generos cuya importancia en la muestra y cantidad de juegos no era relevante, esto con fines el deployment.
-### Finalmente a traves de una función que considerara no arrojar como recomendación el mismo item (Juego) introducido como variable de entrada y la no repeticion de recomendaciones se obtienen los 5 items mejor valorados recomendados.
+
 
 
 
