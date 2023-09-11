@@ -124,12 +124,38 @@ c. Pensando en una matriz de correlacion posterior. Procedimos a realizar un map
   
 ## Dashboard y presentación de resultados
 
-### La presentación realizada a traves de la herramienta PowerBi busca exponer la problematica de los homicidios como consecuencia de siniestros viales fatales, los posibles causantes y soluciones a traves de acciones. Por ello se comienza exponiendo a traves de KPI´s la evolución semestre a semestre de de las victimas fatales y se propone un KPI que nos indique de 2016 a 2021 cual ha sido la evolución promedio geometrica de la tendencia de accidentes. 
+### La presentación realizada a traves de la herramienta PowerBi busca exponer la problematica de los homicidios como consecuencia de siniestros viales fatales, los posibles causantes y soluciones a traves de acciones. Por ello se comienza exponiendo a traves de KPI´s la evolución semestre a semestre de de las victimas fatales por cada 100.000 habitantes, para el año 2.021 la disminución registrada fue del 23.7% por encima del 10% meta propuesto por el gobierno de la ciudad. Adicionalmente se propone un KPI que nos indique de 2016 a 2021 cual ha sido la evolución promedio geometrica de la tendencia de accidentes, el resultado global nos indica que en terminos anuales para los años incluidos en la muestra se han logrado reducir las fatalidades en 10.3%.
 
 ### El analisis continua con las victimas por categoría que nos proporcionan la relación mas relevante sobre el grupo de actores viales sobre el cual deben centrarse las acciones. En la ciudad de Buenos Aires son las motos y los peatones, esta información se compara con los responsables con mas incidencia en los accidentes, que serian las autos particulares y los vehiculos de carga. En terminos generales mueren los conductores en mayor medida y los peatones. El sexo preponderante para las victimas en el Masculino, investigue al respecto y esto puede explicarse pues unicamente el 28% de las licencias que se expiden a mujeres. Expondremos una grafica esclarecedora obtenida del siguiente vinculo de Infobae https://www.infobae.com/inhouse/2022/12/13/movilidad-y-genero-solo-el-28-de-las-licencias-de-conducir-emitidas-en-un-ano-corresponde-a-mujeres/:
 
 ![Mujeres](https://cloudfront-us-east-1.images.arcpublishing.com/infobae/QDYH3RNV5ZGOJFFIEUROHBVWEA.jpg)
 
+### Se identifico que de acuerdo a las franjas horarias las horas en que mas se presentan accidentes fatalaes son entre las 5am y las 8am, hora en que se moviliza la mayor cantidad de vehiculos y peatones pues las personas se dirigen a sus lugares de trabajo, es interesante que por locaización en la ciudad es la comuna 1 la de mayor incidencia de accidentes fatales,  comuna que por cierto alberga la mayor cantidad de sitios turisticos y centros de trabajo en Buenos Aires.
+
+### Habiendo expuesto el panorama del analisis se determinan las siguientes posibles acciones:
+
+1. A pesar que hay regulación al respecto del uso de elementos de protección por parte de motociclistas las autoridades son laxas a la hora de exigir el uso de caso. Hoy en dia existen camaras con alta tecnologia que pueden identficar si un motocilicsta lleva casco y de no ser asi puede ser multado mediante la detección de la placa del vehiculo. Esta acción combinada con autoridades que hagan cumplir la norma tendria un efecto positivo en los fallecimientos de motociclistas. Sin embargo las acciones dirigidas a la importancia del autocuidado en un actor tan vulnerable en la via deben darse masivamente.
+   
+2. Con respecto a las localizaciones geograficas con mayor indicencia de accidentes y teniendo en cuenta que Buenos Aires recibe un gran numero de turistas proponemos:
+
+- En la comuna No.1 deben instalarse avisos en ingles con el fin que los turistas en su mayoria peatones interactuen de forma mas adecuada con las vias y de esta forma evitar accidentes donde ellos esten involucrados.
+- Hay semaforos que pueden ser programados y que faltando algunos segundos para cambiar comienzan a titilar, indicando con suficiente anticipación a los conductores que deben frenar o a los peatones cuando pueden realmente cruzar. La instalación de los mismos a probado incidir en la reducción de accidentes de manera notoria.
+
+3. En Argentina es obligatorío llevar el RTO (Revisión tecnica obligatoria). Este se exige a los vehiculos que circulan por la via publica. Sin embargo la capacidad de la policia de transite suele ser limitada frente a los vehiculos que circulan, logrando unicamente inspeccionar una pequeña muestra de la población global. Considerando que los responsables de los accidentes en su mayoria son los autos particulares y los vehiculos de carga, se propone aprovechar la digitalización del documento instalando camaras con la capacidad de identificar de acuerdo a la placa del vehiculo si el mismo cumple con la condición de tener actualizado dicho certificado, de esta forma si no se cumple con esta condición se impone una multa de transito y se exige inmediatamente al infractor que proceda con la inspección del vehiculo para emitir el RTO o de lo contrario sera inmovilizado.
+
+Segun el Camara de centros de inspección vehicular, cito:
+
+La importancia de la VTV/RTO se agiganta al repasar las estadísticas internacionales que, divididas en tres factores básicos de accidentología, arrojan los siguientes porcentajes respecto de las causas de los accidentes de tránsito:
+
+Las que tienen origen en las fallas atribuibles al factor humano son entre el 70 y el 75 por ciento
+Las que se deben a defectos del vehículo, entre un 22  y un 25 por ciento
+Las originadas en fallas de la vía pública o fenómenos ambientales, entre un 5 y un 7 por ciento.
+
+fuente: http://www.cciv.com.ar/contenidos/2017/10/10/Editorial_2870.php#:~:text=La%20Revisi%C3%B3n%20T%C3%A9cnica%20Obligatoria%20(RTO,largo%20de%20su%20vida%20%C3%BAtil.
+
+4. Por ultimo como se observan franjas horarias donde se dan la mayoria de los accidentes. El pie de fuerza debe incrementarse a dichas horas, maximizando el recurso humano y asi incrementar los controles viales.
+
+### Como se puede observar nuestras recomendaciones se basan en el aprovechamiento de la tecnología disponible que en conjunto con las acciones de control humanas ciertamente tendran incidencia en la cantidad de accidentes fatales.
 
 
 
