@@ -14,8 +14,8 @@
 
 Nota: Como se puede observar el EDA en su totalidad se realiza en la hoja ETL y EDA.
 
-5. Achivo PowerBi con dashboard.
-6. Imagen del Dashboard.
+4. Achivo PowerBi con dashboard.
+5. Imagen del Dashboard.
 
 # Introducción
 
