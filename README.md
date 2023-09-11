@@ -9,10 +9,13 @@
 ## Información al interior del repositorio:
 
 1. README
-2. ETL (Notebook Jupyter)
-3. EDA (Notebook Jupyter)
-4. Achivo PowerBi con dashboard.
-5. Imagen del Dashboard.
+2. ETL (Notebook Jupyter): Contiene imputación de datos faltantes, trabajo con tipos de datos y duplicados.
+3. EDA (Notebook Jupyter): Análisis estadístico, univariado, bivariado y multivariado, outliers y relaciones entre variables.
+
+Nota: Como se puede observar el EDA en su totalidad se realiza en la hoja ETL y EDA.
+
+5. Achivo PowerBi con dashboard.
+6. Imagen del Dashboard.
 
 # Introducción
 
